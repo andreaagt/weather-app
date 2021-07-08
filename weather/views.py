@@ -12,8 +12,12 @@ def index(request):
     lon = request.POST.get('longitud')
     w = weather_by_latlon(lat, lon)
     if w != None:
-      context = {'clima': w['weather_state_name'], 'humedad': w['humidity'],
-      'temp_min': w['min_temp'], 'temp_max': w['max_temp']}
+      context = {
+        'clima': w['weather_state_name'], 
+        'humedad': w['humidity'],
+        'temp_min': w['min_temp'],
+        'temp_max': w['max_temp']
+        }
       return render(request, 'clima.html', context)
     else:
       return render(request, 'not_found.html', {'msg':'Ciudad no encontrada'})
@@ -23,8 +27,12 @@ def index(request):
     print(location)
     w = weather_by_locations(location)
     if w != None:
-      context = {'clima': w['weather_state_name'], 'humedad': w['humidity'],
-      'temp_min': w['min_temp'], 'temp_max': w['max_temp']}
+      context = {
+        'clima': w['weather_state_name'], 
+        'humedad': w['humidity'],
+        'temp_min': w['min_temp'], 
+        'temp_max': w['max_temp']
+        }
       return render(request, 'clima.html', context)
     else:
       return render(request, 'not_found.html', {'msg':'Ciudad no encontrada'})
@@ -54,7 +62,7 @@ def weather_by_latlon(lat, lon):
       temp_max = clima['max_temp']
     )
     consulta.save()
-
+    
   except: 
     clima = None
   

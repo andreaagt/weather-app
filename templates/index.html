@@ -52,28 +52,12 @@
           </div>
         </form>
       </div>
+
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
   </div>
-  
-  <!--
-  <form action="" method="post">{% csrf_token %}
-    <p>Ingresar latitud y longitud</p>
-    <p>Latitud</p>
-    <input type="text" name="latitud" placeholder="latitud">
-    <p>Longitud</p>
-    <input type="text" name="longitud" placeholder="longitud"> 
-    <br><br>
-    <input name='boton1' type="submit" value="obtener clima">
-  </form>
-  -->
-
-  <!--
-  <form action="" method="post">{% csrf_token %}
-    <p>Ingresar nombre de ciudad / Pais</p>
-    <input type="text" name="location" placeholder="location">
-    <input name='boton2' type="submit" value="obtener clima">
-  </form>
-  -->
 </body>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>
