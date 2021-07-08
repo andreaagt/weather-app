@@ -2,9 +2,13 @@
 
 En local:
     
-    pipenv shell
+    $ pipenv shell
     
-    python manage.py runsever
+    
+    $ pip install -r requirements.txt 
+    
+    
+    $ python manage.py runsever
 
 
 
