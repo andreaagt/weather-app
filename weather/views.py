@@ -1,9 +1,6 @@
 from django.conf import settings
 from django.shortcuts import render
-#from django.template import Context, Template
-
 from .models import Consultas
-
 
 import requests
 from datetime import date
