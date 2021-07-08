@@ -1,13 +1,60 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" class="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Weather App</title>
 </head>
 <body>
-  <h1>Consultar El clima</h1>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Weather app</a>
+    </div>
+  </nav>
+  <div class="container"> 
+    <h3>Consultar El clima</h3>
+    <div class="row" class="container">
+      <form class="col s12" method="post">{% csrf_token %}
+        <div class="row">
+          <div class="input-field col s6">
+            <input name="latitud" placeholder="latitud" id="latitud" type="text" class="validate">
+            <label for="latitud">Latitud</label>
+          </div>
+          <div class="input-field col s6">
+            <input name="longitud" placeholder="longitud" id="longitud" type="text" class="validate">
+            <label for="longitud">Longitud</label>
+          </div>
+          <div class="input-field col s4">
+          <button name='boton1' class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+      <div class="row" class="container">
+        <form class="col s12" method="post">{% csrf_token %}
+          <div class="row">
+            <div class="input-field col s6">
+              <input name="location" placeholder="País / ciudad" id="location" type="text" class="validate">
+              <label for="location">País / ciudad</label>
+            </div>
+            <div class="input-field col s4">
+              <button name='boton2' class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+          </div>
+          </div>
+        </form>
+      </div>
+  </div>
+  
+  <!--
   <form action="" method="post">{% csrf_token %}
     <p>Ingresar latitud y longitud</p>
     <p>Latitud</p>
@@ -17,13 +64,16 @@
     <br><br>
     <input name='boton1' type="submit" value="obtener clima">
   </form>
+  -->
+
+  <!--
   <form action="" method="post">{% csrf_token %}
     <p>Ingresar nombre de ciudad / Pais</p>
     <input type="text" name="location" placeholder="location">
     <input name='boton2' type="submit" value="obtener clima">
   </form>
-
+  -->
 </body>
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>

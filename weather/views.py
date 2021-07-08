@@ -20,6 +20,7 @@ def index(request):
   
   elif 'boton2' in request.POST:
     location = request.POST.get('location')
+    print(location)
     w = weather_by_locations(location)
     if w != None:
       context = {'clima': w['weather_state_name'], 'humedad': w['humidity'],
