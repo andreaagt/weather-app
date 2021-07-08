@@ -7,8 +7,9 @@
   <title>Weather App</title>
 </head>
 <body>
-  <h1>Consultar Tiempo</h1>
+  <h1>Consultar El clima</h1>
   <form action="" method="post">{% csrf_token %}
+    <p>Ingresar latitud y longitud</p>
     <p>Latitud</p>
     <input type="text" name="latitud" placeholder="latitud">
     <p>Longitud</p>
@@ -17,16 +18,12 @@
     <input name='boton1' type="submit" value="obtener clima">
   </form>
   <form action="" method="post">{% csrf_token %}
-    <p>Ciudad</p>
-    <input type="text" name="ciudad" placeholder="ciudad">
+    <p>Ingresar nombre de ciudad / Pais</p>
+    <input type="text" name="location" placeholder="location">
     <input name='boton2' type="submit" value="obtener clima">
   </form>
-  <form action="" method="post">{% csrf_token %}
-    <p>Pais</p>
-    <input type="text" name="pais" placeholder="pais">
-    <input name='boton3' type="submit" value="obtener clima">
-  </form>
 
-  
 </body>
+
+
 </html>
